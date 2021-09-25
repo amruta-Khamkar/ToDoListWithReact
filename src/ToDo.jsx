@@ -11,7 +11,7 @@ class ToDo extends Component {
                 // { id: 1, Title: 'JS Batch', body: "React js" },
                 // { id: 2, Title: 'Philomaths', body: "My Team" },
             ], 
-            update:0
+            edit:0
 
         }
     }
@@ -28,7 +28,9 @@ class ToDo extends Component {
             alert("Please fill out fields");
         }
         else{
-            this.setState({arr:[...arr,{Title:Title,body:body,id:id+1}]})
+            this.setState({arr:[...arr,{Title:Title,body:body,id:id+1}]});
+            document.getElementById("title").value=" ";
+            document.getElementById("desc").value=" "
         }
     }
 
@@ -44,14 +46,11 @@ class ToDo extends Component {
             })
             console.log(index);
         }
-        else {
-            return
-        }
     }
 
     updateTask = (index) => {
-        let { arr ,Title,body,update} = this.state;
-       this.setState({update:index})
+        let { arr ,Title,body,edit} = this.state;
+       this.setState({edit:index})
        console.log(this.state)
        document.getElementById("title").value=arr[index].Title
        document.getElementById("desc").value=arr[index].body
@@ -77,7 +76,7 @@ class ToDo extends Component {
                 <label className="label">Description :</label> <textarea  onChange={this.handler1} name="" id="desc" name="body" cols="30" rows="3" o></textarea><br></br>
                 <div className="flex">
                 <button className="btn" onClick={this.addTask}>Add task</button><br></br>
-                <button className="btn" onClick={() => this.finalUpdate(this.state.update)}>Final Update</button><br></br>
+                <button className="btn" onClick={() => this.finalUpdate(this.state.edit)}>Final Update</button><br></br>
                 </div>
                 <div className="scroll">
                 <table className="table" border="3">
@@ -90,7 +89,6 @@ class ToDo extends Component {
 
                     <tbody>
                         {this.state.arr.map((task, index) => {
-                           { console.log(task);}
                             return <tr key={index}>
                                 <td>{index + 1}</td>
                                 <td>{task.Title}</td>
