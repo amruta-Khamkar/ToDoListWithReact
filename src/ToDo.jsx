@@ -44,7 +44,6 @@ class ToDo extends Component {
             this.setState({
                 arr: arr
             })
-            console.log(index);
         }
     }
 
