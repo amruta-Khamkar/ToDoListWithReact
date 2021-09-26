@@ -11,7 +11,7 @@
 .Container input{
     background:none;
     border:3px solid white;
-    margin-top: 30px;
+    margin-top: -9px;
     font-size: 18px;
     color: white;
     outline: none;
@@ -84,7 +84,7 @@ label{
 .table td,th{
     padding: 12px;
 }
-.btn1{
+.btn1,.btn2{
     background-color:rgb(0, 0, 0);
     outline: none;
     font-size: 15px;
@@ -95,5 +95,23 @@ label{
     margin:0 9px
 }
 .btn1:hover{
-    background-color: rgb(51, 51, 51);
-} 
+    background-color: green
+}
+.btn2:hover{
+    background-color: red;
+}
+.nums{
+ /* border: 2px solid red; */
+    position: relative;
+    left: 900px;
+    width: 30%; 
+    top:30px;
+}
+.red{
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    background-color: rgb(217, 231, 17);
+    padding: 3px 12px;
+    border-radius: 50px;
+    margin-left: 9px;
+}
