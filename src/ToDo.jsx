@@ -8,8 +8,8 @@ class ToDo extends Component {
         super(props);
         this.state = {
             tasks: [
-                // { id: 1, Title: 'JS Batch', body: "React js" },
-                // { id: 2, Title: 'My company', body: "Neosoft Techonlogies" },
+                { id: 1, Title: 'JS Batch', body: "React js" },
+                { id: 2, Title: 'My company', body: "Neosoft Techonlogies" },
             ],
             update: 0,
             noOfTasks:1
